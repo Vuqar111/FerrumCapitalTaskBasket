@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Common things */
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem;
+}
+select {
+  padding: 10px;
+  font-size: 15px;
+}
+button {
+  background-color: #f8f8f8;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+}
+
+header a {
+  color: black;
+  padding: 1rem;
+  font-size: 20px;
+}
+a.brand {
+  color: black;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Layout */
+header {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+}
+
+.homeproducts {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Basket */
+.cartcount {
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+}
+
+/* Image */
+img {
+  border-radius: 0.5rem;
+}
+.cartimg {
+  max-width: 5rem;
+  width: 100%;
+}
+.productcartimg {
+  max-width: 29rem;
+  width: 100%;
+}
+
+
+/* Card */
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+
+
+/* Cart Screen */
+
+.rowcart {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.cartscreen {
+  width: 100%;
+}
+
+.rowcarting {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+/* Add Btn */
+.addbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #08AD76;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+
+}
