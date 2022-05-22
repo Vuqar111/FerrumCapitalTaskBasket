@@ -38,10 +38,10 @@ export default function ProductScreen(props) {
             <Link to="/">Return to Home Page</Link>
             <div className="main">
               <div className="productimg">
-                <img src={product.image} alt={product.name}></img>
+                <img src={product.image} alt={product.title}></img>
               </div>
               <div className="content ">
-                <h1 className="productname">{product.name}</h1>
+                <h1 className="productname">{product.title}</h1>
                 <h3 className="">
                   {product.price} Azn
                 </h3>

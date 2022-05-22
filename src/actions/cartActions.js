@@ -6,10 +6,9 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
   dispatch({
     type: CART_ADD_ITEM,
     payload: {
-      name: data.name,
+      title: data.title,
       image: data.image,
       price: data.price,
-      countInStock: data.countInStock,
       product: data.id,
       qty,
     },

@@ -8,11 +8,11 @@ export default function Product(props) {
   return (
     <div key={product.id} className="card">
       <Link to={`/product/${product.id}`}>
-        <img className="productcartimg" src={product.image} alt={product.name} />
+        <img className="productcartimg" src={product.image} alt={product.title} />
       </Link>
       <div className="card-body">
         <Link to={`/product/${product.id}`}>
-          <h2>{product.name}</h2>
+          <h2>{product.title}</h2>
         </Link>
         <div className="price">${product.price}</div>
       </div>
