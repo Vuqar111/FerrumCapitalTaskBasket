@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {detailsProduct } from "../actions/productActions";
+import { addToCart,  } from "../actions/cartActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import styled from "styled-components";
@@ -20,9 +21,8 @@ export default function ProductScreen(props) {
   }, [dispatch, productId]);
 
   const addToCartHandler = () => {
-    props.history.push(
-      `/cart/${productId}?qty=${qty}`
-    );
+    dispatch(addToCart(productId, qty));
+  
   };
 
 
