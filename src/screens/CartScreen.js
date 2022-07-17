@@ -8,18 +8,15 @@ import { AiFillDelete} from "react-icons/ai";
 
 export default function CartScreen(props) {
   const productId = props.match.params.id;
-  const qty = props.location.search
-    ? Number(props.location.search.split("=")[1])
-    : 1;
-    const countInStock = 10
+  
   const cart = useSelector((state) => state.cart);
   const { cartItems, error } = cart;
   const dispatch = useDispatch();
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId));
     }
-  }, [dispatch, productId, qty]);
+  }, [dispatch, productId]);
 
   const removeFromCartHandler = (id) => {
     // action which delete cart
@@ -55,24 +52,8 @@ export default function CartScreen(props) {
                     <Link to={`/product/${item.product}`}>{item.title}</Link>
                   </div>
 
-               
-                  <div>
-                    <select
+               <div>{item.product}</div>
                   
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
-                      }
-                    >
-                      {[...Array(countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
                   <div>{item.price}$</div>
                   <div>
                     <button

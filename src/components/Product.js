@@ -5,18 +5,12 @@ import { addToCart,  } from "../actions/cartActions";
 export default function Product(props) {
   const { product } = props;
 
-  // const productId = props.match.params.id;
-  // const [qty, setQty] = useState(1);
+  console.log(product) 
 
-
-
-  // const dispatch = useDispatch()
-  // const addToCartHandler = () => {
-  //   dispatch(addToCart(productId, qty));
-  //   props.history.push(
-  //     `/cart/${productId}?qty=${qty}`
-  //   );
-  // };
+  const dispatch = useDispatch()
+  const addToCartHandler = () => {
+    dispatch(addToCart(product.id));
+  };
 
   return (
     <div key={product.id} className="card">
@@ -29,7 +23,7 @@ export default function Product(props) {
         </Link>
         <div className="price">${product.price}</div>
         <button
-                        onClick=""
+                        onClick={addToCartHandler}
                         type="button"
                         className="addbtn"
                       >

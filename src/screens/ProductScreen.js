@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {detailsProduct } from "../actions/productActions";
-import { addToCart,  } from "../actions/cartActions";
+import { detailsProduct } from "../actions/productActions";
+import { addToCart } from "../actions/cartActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import styled from "styled-components";
@@ -13,18 +13,15 @@ export default function ProductScreen(props) {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  const countInStock = 10
+  const countInStock = 10;
 
-  
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
 
   const addToCartHandler = () => {
     dispatch(addToCart(productId, qty));
-  
   };
-
 
   return (
     <Wrapper>
@@ -42,56 +39,24 @@ export default function ProductScreen(props) {
               </div>
               <div className="content ">
                 <h1 className="productname">{product.title}</h1>
-                <h3 className="">
-                  {product.price} Azn
-                </h3>
-                <p className="">
-                  {product.description}
-                </p>
-              
-            
+                <h3 className="">{product.price} Azn</h3>
+                <p className="">{product.description}</p>
 
-          
-
-                {countInStock > 0 && (
-                  <>
-                    <li className="w-[200px]">
-                      <div >
-                        <div>Ədəd:</div>
-                        <div className="qtyselect">
-                          <select
-                            className=" p-[0px] "
-                            value={qty}
-                            onChange={(e) => setQty(e.target.value)}
-                          >
-                            {[...Array(countInStock).keys()].map(
-                              (x) => (
-                                <option key={x + 1} value={x + 1}>
-                                  {x + 1}
-                                </option>
-                              )
-                            )}
-                          </select>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li>
-                      <button
-                        onClick={addToCartHandler}
-                        type="button"
-                        className="addbtn"
-                      >
-                        <p className="text-white text-base font-semibold text-[30px] carttext">
-                          Karta əlavə et
-                        </p>
-                      </button>
-                    </li>
-                  </>
-                )}
+                <>
+                  <li>
+                    <button
+                      onClick={addToCartHandler}
+                      type="button"
+                      className="addbtn"
+                    >
+                      <p className="text-white text-base font-semibold text-[30px] carttext">
+                        Karta əlavə et
+                      </p>
+                    </button>
+                  </li>
+                </>
               </div>
             </div>
-    
           </div>
         )}
       </div>
@@ -138,9 +103,9 @@ const Wrapper = styled.div`
     margin-left: 30px;
     padding: 20px;
   }
-.carttext {
-  font-size: 25px;
-}
+  .carttext {
+    font-size: 25px;
+  }
   @media (max-width: 768px) {
     width: 95%;
     .main {
